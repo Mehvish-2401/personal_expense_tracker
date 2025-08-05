@@ -1,7 +1,9 @@
 Personal Expense Tracker
+
 This is a simple web-based application designed to help users track and manage their personal expenses. It provides a user-friendly interface to log new expenses, categorize them, and view a summary of spending.
 
 Features
+
 Add/Track Expenses: Easily add new expenses with details like amount, description, and date.
 
 Categorize Spending: Organize expenses by category (e.g., Groceries, Rent, Entertainment).
