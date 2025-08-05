@@ -1,0 +1,346 @@
+/* General Body and Container Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 30px 0;
+}
+
+/* Summary Section */
+.summary p {
+    font-size: 1.1em;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.summary p.net-balance {
+    font-weight: bold;
+    color: #28a745; /* Green for positive balance */
+    font-size: 1.2em;
+}
+
+.summary p.net-balance.negative {
+    color: #dc3545; /* Red for negative balance */
+}
+
+/* Styles for balance bar */
+.balance-bar-container {
+    width: 100%;
+    background-color: #eee; /* Light gray background */
+    border-radius: 5px;
+    height: 20px; /* Height of the bar */
+    overflow: hidden; /* Ensures bar stays within bounds */
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+.balance-bar {
+    height: 100%;
+    background-color: #4CAF50; /* Green for positive balance */
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out; /* Smooth transition when width changes */
+}
+
+/* Rule to make the bar red if the net balance is negative */
+.net-balance.negative + .balance-bar-container .balance-bar {
+    background-color: #f44336; /* Red for negative balance */
+}
+
+/* Flash Messages */
+.flash-messages {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.message {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.message.success,
+.message.success-confetti { /* Apply success styles to both */
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+/* Form Styles (Add Transaction) */
+.add-transaction form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.add-transaction label {
+    font-weight: bold;
+    align-self: center;
+}
+
+.add-transaction input[type="date"],
+.add-transaction input[type="number"],
+.add-transaction select,
+.add-transaction textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Focus State for Form Inputs */
+.add-transaction input[type="date"]:focus,
+.add-transaction input[type="number"]:focus,
+.add-transaction select:focus,
+.add-transaction textarea:focus,
+.add-category-form input[type="text"]:focus,
+.add-category-form select:focus {
+    border-color: #007bff; /* Primary blue border */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Subtle blue glow */
+    outline: none; /* Removes default browser outline */
+}
+
+/* General Button/Link Transition (apply to all buttons including form submissions and delete buttons) */
+button,
+.footer-links a {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.add-transaction button[type="submit"] {
+    grid-column: 1 / 3;
+    background-color: #007bff; /* Primary Blue */
+    color: white;
+    padding: 12px 20px; /* Slightly more padding */
+    border: none;
+    border-radius: 6px; /* Slightly more rounded */
+    cursor: pointer;
+    font-size: 1.05em; /* Slightly larger font */
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3); /* Subtle shadow */
+}
+
+.add-transaction button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-1px); /* Slight lift */
+    box-shadow: 0 5px 10px rgba(0, 123, 255, 0.4);
+}
+
+.add-transaction button[type="submit"]:active {
+    background-color: #004085; /* Even darker on click */
+    transform: translateY(0); /* Press down effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Transaction List Table */
+.transactions-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.transactions-list th,
+.transactions-list td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.transactions-list th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #555;
+}
+
+.transactions-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Enhanced hover effect for table rows */
+.transactions-list tr:hover {
+    background-color: #e9ecef; /* Slightly darker hover color */
+    transform: scale(1.005); /* Very subtle zoom effect */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow on hover */
+    position: relative; /* Needed for transform */
+    z-index: 1; /* Ensures shadow is above other rows */
+}
+
+.transactions-list td.expense {
+    color: #dc3545; /* Red for expense amounts */
+    font-weight: bold;
+}
+
+.transactions-list td.income {
+    color: #28a745; /* Green for income amounts */
+    font-weight: bold;
+}
+
+/* Type Badge Styles for Transaction Table */
+.type-badge {
+    display: inline-block; /* Allows padding and background */
+    padding: 4px 8px;
+    border-radius: 12px; /* Makes it pill-shaped */
+    font-size: 0.85em; /* Slightly smaller text */
+    font-weight: bold;
+    text-align: center;
+    min-width: 65px; /* Ensures consistent width */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.income-badge {
+    background-color: #e6ffe6; /* Light green background */
+    color: #1a7a1a; /* Darker green text */
+    border: 1px solid #c9f0c9;
+}
+
+.expense-badge {
+    background-color: #ffe6e6; /* Light red background */
+    color: #a32f2f; /* Darker red text */
+    border: 1px solid #f0c9c9;
+}
+
+.transactions-list .delete-btn {
+    background-color: #dc3545; /* Red */
+    color: white;
+    border: none;
+    padding: 6px 12px; /* Slightly more padding */
+    border-radius: 5px; /* Slightly more rounded */
+    cursor: pointer;
+    font-size: 0.88em;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.2);
+}
+
+.transactions-list .delete-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.transactions-list .delete-btn:active {
+    background-color: #b02a37; /* Even darker on click */
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Colored Category Text based on Type */
+.income-category-text {
+    color: #28a745; /* Darker green for income categories */
+    font-weight: bold;
+}
+
+.expense-category-text {
+    color: #dc3545; /* Darker red for expense categories */
+    font-weight: bold;
+}
+
+/* Footer Links */
+.footer-links {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; /* Allows padding to work */
+    padding: 8px 15px; /* Add padding */
+    border: 1px solid #007bff; /* Add a subtle border */
+    border-radius: 5px; /* Slightly rounded corners */
+    margin-top: 15px; /* Push it down a bit from HR */
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.1);
+}
+
+.footer-links a:hover {
+    background-color: #007bff; /* Fill with color on hover */
+    color: white; /* White text on hover */
+    text-decoration: none; /* Remove underline on hover */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.footer-links a:active {
+    background-color: #0056b3;
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Styles for Add Category Page */
+.add-category-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-category-form label {
+    font-weight: bold;
+}
+
+.add-category-form input[type="text"],
+.add-category-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.add-category-form button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.add-category-form button[type="submit"]:hover {
+    background-color: #218838;
+}
