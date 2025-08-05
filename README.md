@@ -1,20 +1,21 @@
-Personal Expense Tracker
+💻 Personal Expense Tracker
 
-This is a simple web-based application designed to help users track and manage their personal expenses. It provides a user-friendly interface to log new expenses, categorize them, and view a summary of spending.
+This is a project designed to track and manage expenses. The project is built around an SQL database, with a simple web interface to help you interact with your data.
 
-Features
+✨ Features
 
-Add/Track Expenses: Easily add new expenses with details like amount, description, and date.
+Add Expenses: Easily add new expenses with details like the amount, a description, and the date.
 
-Categorize Spending: Organize expenses by category (e.g., Groceries, Rent, Entertainment).
+Categorize Spending: Organize your expenses by creating and assigning them to categories.
 
-Data Persistence: All expense data is stored locally in a SQLite database.
+View Spending: Get a clear overview of all your logged expenses.
 
-Technologies Used
-Python: The core programming language for the back-end logic.
+SQL-Powered: All your expense data is securely stored, managed, and retrieved using SQL commands in a local SQLite database.
 
-Flask: A lightweight web framework used to build the web application.
+⚙️ How It Works
 
-SQLite: A serverless, self-contained database used for storing all expense records.
+Database: A SQLite database stores all your expenses and categories.
 
-HTML/CSS: For the front-end user interface.
+Backend: Python and the Flask framework handle all the logic, sending SQL commands to the database and preparing data for the web pages.
+
+Frontend: The web pages are built with HTML and CSS for a simple and clean design.
